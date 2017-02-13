@@ -5,7 +5,7 @@
  */
 ?>
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-6 col-md-offset-3">
 		<div class="maintenance-content">
 			<p class="well">
 				<?php echo Yii::t('common', $maintenanceText, [

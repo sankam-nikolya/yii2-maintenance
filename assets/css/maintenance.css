@@ -1,4 +1,5 @@
-body.maintenance-body {
-  background: #555555;
+.maintenance-content {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    text-align: center;
 }
-/*# sourceMappingURL=maintenance.map */

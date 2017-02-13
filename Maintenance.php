@@ -40,21 +40,6 @@ class Maintenance extends Component implements BootstrapInterface
     public $maintenanceText;
 
     /**
-     * @inheritdoc
-     */
-    public function init()
-    {
-        parent::init();
-        if (!isset(Yii::$app->i18n->translations['maintenance'])) {
-            Yii::$app->i18n->translations['maintenance'] = [
-                'class' => 'yii\i18n\PhpMessageSource',
-                'sourceLanguage' => 'en-GB',
-                'basePath' => '@sankam/maintenance/messages',
-            ];
-        }
-    }
-
-    /**
      * Bootstrap method to be called during application bootstrap stage.
      * @param \yii\web\Application $app the application currently running
      */
@@ -66,6 +51,13 @@ class Maintenance extends Component implements BootstrapInterface
             $enabled = $this->enabled;
         }
         if ($enabled) {
+            if (!isset(Yii::$app->i18n->translations['maintenance'])) {
+                Yii::$app->i18n->translations['maintenance'] = [
+                    'class' => 'yii\i18n\PhpMessageSource',
+                    'sourceLanguage' => 'en-GB',
+                    'basePath' => '@sankam/maintenance/messages',
+                ];
+            }
             $this->maintenanceText = $this->maintenanceText ?: Yii::t('maintenance', 'Down to maintenance.');
             if ($this->catchAllRoute === null) {
                 $app->controllerMap['maintenance'] = [

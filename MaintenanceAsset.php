@@ -12,7 +12,7 @@ class MaintenanceAsset extends AssetBundle
     public $sourcePath = '@sankam/maintenance/assets';
 
     public $css = [
-        'css/maintenance.css'
+        YII_ENV_DEV ? 'css/maintenance.css' : 'css/maintenance.min.css'
     ];
 
     public $depends = [
